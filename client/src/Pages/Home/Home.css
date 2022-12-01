@@ -1,0 +1,43 @@
+.home {
+  min-height: 98vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.home header {
+  background-color: #76ae5c;
+  color: #f0f0f0;
+  text-align: center;
+  padding: 0.8rem 0;
+  width: 92%;
+}
+.home form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ebebeb;
+  padding: 2rem 0;
+  width: 92%;
+}
+.home form label {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+.home form label input {
+  height: 40px;
+  font-size: large;
+  color: #0d0d0d;
+  border: 0 none transparent;
+  width: 100%;
+  padding: 0px 12px;
+}
+.home form button {
+  background-color: #76ae5c;
+  color: #f0f0f0;
+  height: 34px;
+  width: 80%;
+  border: none;
+  margin: 14px 0 0 0;
+}

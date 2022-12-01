@@ -1,1 +1,3 @@
-# Quiz App for Department of Compputer Science at CMS college of Science and Commerce, Coimbatore
+# Quiz App for Department of Computer Science
+
+## at CMS college of Science and Commerce, Coimbatore

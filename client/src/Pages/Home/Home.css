@@ -1,29 +1,32 @@
 .home {
-  min-height: 98vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+.home-container {
+  border: 1px solid #808080;
+  width: 92%;
 }
 .home header {
   background-color: #76ae5c;
   color: #f0f0f0;
   text-align: center;
   padding: 0.8rem 0;
-  width: 92%;
 }
 .home form {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #ebebeb;
-  padding: 4rem 0;
-  width: 92%;
+  padding: 3rem 0;
 }
 .home form label {
   display: flex;
   flex-direction: column;
   width: 80%;
+  padding: 0.4rem 0;
 }
 .home form label input {
   height: 40px;
@@ -32,6 +35,9 @@
   border: 0 none transparent;
   width: 100%;
   padding: 0px 12px;
+}
+.home form label input:focus::placeholder {
+  color: transparent;
 }
 .home form button {
   background-color: #76ae5c;
@@ -42,8 +48,10 @@
   margin: 14px 0 0 0;
 }
 @media only screen and (min-width: 669px) {
-  .home header,
-  .home form {
+  /* .home :is(header, form) {
+    width: 450px;
+  } */
+  .home-container {
     width: 450px;
   }
 }

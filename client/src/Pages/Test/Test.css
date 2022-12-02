@@ -1,0 +1,11 @@
+.test {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+}
+.test header {
+  border: 1px solid #f0f0f0;
+  border-radius: 1em;
+}

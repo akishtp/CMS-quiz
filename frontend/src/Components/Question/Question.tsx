@@ -11,9 +11,9 @@ const Question: React.FC = () => {
         </div>
         <div className="options">
           <button>Yes</button>
-          <button>Defenitly</button>
-          <button>Maybe, Maybe not</button>
+          <button>Maybe? Maybe not.</button>
           <button>Probably</button>
+          <button>Ask first</button>
         </div>
       </form>
     </div>

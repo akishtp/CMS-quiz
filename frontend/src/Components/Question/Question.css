@@ -1,0 +1,28 @@
+.question-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  padding: 20px 0;
+  margin: 12px 0;
+  width: 84%;
+}
+.question-card .right-side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.question {
+  width: 84%;
+}
+.question-card .options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 84%;
+}
+.question-card .options button {
+  width: 100%;
+}

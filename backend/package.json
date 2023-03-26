@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.3"
+  },
+  "name": "cms-quiz-backend",
+  "version": "1.0.0",
+  "main": "script.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "npx nodemon"
+  },
+  "author": "akishtp",
+  "license": "ISC",
+  "description": ""
+}

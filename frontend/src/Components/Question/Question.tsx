@@ -1,19 +1,25 @@
 import React from "react";
 import "./Question.css";
 
-const Question: React.FC = () => {
+interface QuestionState {
+  question: {
+    question: string;
+    options: Array<string>;
+    answer: string;
+  };
+  index: number;
+}
+
+const Question: React.FC<QuestionState> = ({ question, index }) => {
   return (
     <div className="question-card">
-      <div className="question-number">1</div>
+      <div className="question-number">{index + 1}</div>
       <form action="" className="right-side">
-        <div className="question">
-          Would you answer me if i asked you a question?
-        </div>
+        <div className="question">{question.question}</div>
         <div className="options">
-          <button>Yes</button>
-          <button>Maybe? Maybe not.</button>
-          <button>Probably</button>
-          <button>Ask first</button>
+          {question.options.map((option: any) => (
+            <button>{option}</button>
+          ))}
         </div>
       </form>
     </div>

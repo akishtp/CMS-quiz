@@ -6,3 +6,11 @@
   flex-direction: column;
   padding: 16px 0;
 }
+.submit-test {
+  width: 84vw;
+  height: 36px;
+  border: 1px solid #000;
+  border-radius: 0;
+  background-color: #51a341;
+  color: #fff;
+}

@@ -13,7 +13,7 @@ interface QuestionState {
 const Question: React.FC<QuestionState> = ({ question, index }) => {
   return (
     <div className="question-card">
-      <div className="question-number">{index + 1}</div>
+      <div className="question-number">{index + 1})</div>
       <form action="" className="right-side">
         <div className="question">{question.question}</div>
         <div className="options">

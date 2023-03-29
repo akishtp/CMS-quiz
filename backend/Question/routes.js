@@ -10,6 +10,6 @@ questionRoutes.post("/", addQuestion);
 // blogsRouter.delete("/:id", deleteBlog);
 
 // // edit blog
-// blogsRouter.patch("/:id", updateBlog);
+// blogsRouter.put("/:id", updateBlog);
 
 module.exports = questionRoutes;

@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { login } from "./teacherActions";
-// import { getQuestions } from "./questionsActions";
 
 interface TeacherState {
   teacher: any;

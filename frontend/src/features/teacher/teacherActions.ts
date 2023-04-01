@@ -12,12 +12,11 @@ export const login = createAsyncThunk(
     };
     try {
       const { data } = await axios.post(
-        "https://verlow-server.up.railway.app/api/user/login",
+        "/api/teacher/login",
         { teacherId, password },
         config
       );
       localStorage.setItem("userDetails", JSON.stringify(data));
-      console.log(data);
       return data;
     } catch (error: any) {
       return rejectWithValue(error.response.data.error);

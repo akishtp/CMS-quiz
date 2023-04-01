@@ -14,7 +14,7 @@ const initialState: QuestionsState = {
 };
 
 const questionSlice = createSlice({
-  name: "blogs",
+  name: "question",
   initialState,
   reducers: {},
   extraReducers: (builder) => {

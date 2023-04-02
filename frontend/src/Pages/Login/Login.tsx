@@ -1,19 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Login.css";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { login } from "../../features/teacher/teacherActions";
+import { useNavigate } from "react-router-dom";
 
 const Login: React.FC = () => {
   const [teacherId, setTeacherId] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
-  const { loading, error } = useAppSelector((state) => state.teacher);
+  const { teacher, loading, error } = useAppSelector((state) => state.teacher);
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     dispatch(login({ teacherId, password }));
   };
+
+  useEffect(() => {
+    if (teacher != null) {
+      navigate("/dashboard");
+    }
+    console.log(teacher);
+  }, [navigate, teacher]);
 
   if (loading) {
     return <div className="loading">Loading..</div>;

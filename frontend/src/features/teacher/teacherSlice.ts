@@ -2,13 +2,17 @@ import { createSlice } from "@reduxjs/toolkit";
 import { login } from "./teacherActions";
 
 interface TeacherState {
-  teacher: any;
+  teacher: string | null;
   loading: boolean;
   error: null | string | unknown;
 }
 
+const teacher = localStorage.getItem("teacherDetails")
+  ? JSON.parse(localStorage.getItem("teacherDetails") as string)
+  : null;
+
 const initialState: TeacherState = {
-  teacher: [],
+  teacher,
   loading: false,
   error: null,
 };

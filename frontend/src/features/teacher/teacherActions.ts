@@ -16,7 +16,7 @@ export const login = createAsyncThunk(
         { teacherId, password },
         config
       );
-      localStorage.setItem("userDetails", JSON.stringify(data));
+      localStorage.setItem("teacherDetails", JSON.stringify(data));
       return data;
     } catch (error: any) {
       return rejectWithValue(error.response.data.error);

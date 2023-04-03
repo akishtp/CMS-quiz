@@ -1,8 +1,8 @@
 const express = require("express");
+const { addTest } = require("./controllers");
 
 const testRoutes = express.Router();
 
-testRoutes.get("/", getQuestions);
-testRoutes.post("/", addQuestion);
+testRoutes.post("/", addTest);
 
 module.exports = testRoutes;

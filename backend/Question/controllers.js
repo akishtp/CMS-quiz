@@ -1,8 +1,8 @@
-const Blog = require("./model");
+const Question = require("./model");
 
 const getQuestions = async (req, res) => {
-  const blogs = await Blog.find({}).sort({ date: -1 });
-  res.status(200).json(blogs);
+  const questions = await Question.find({}).sort({ date: -1 });
+  res.status(200).json(questions);
 };
 
 const addQuestion = async (req, res) => {

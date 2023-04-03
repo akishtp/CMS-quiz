@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const Teacher = require("../Teacher/model");
+const Teacher = require("./model");
 
 const createToken = (_id) => {
   return jwt.sign({ _id }, process.env.SECRET, { expiresIn: "30d" });

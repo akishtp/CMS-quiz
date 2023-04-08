@@ -24,7 +24,9 @@ label {
   width: 84%;
   margin: 6px 0;
 }
-input {
+input[type="text"],
+input[type="date"],
+input[type="password"] {
   height: 36px;
   width: 100%;
   border-radius: 0;

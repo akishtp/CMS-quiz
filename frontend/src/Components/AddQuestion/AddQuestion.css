@@ -1,0 +1,28 @@
+.add-question {
+  padding: 20px 0;
+  margin: 12px 0;
+  width: 84%;
+}
+.add-options {
+  width: 84%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.add-options label {
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+.add-options label .option-span {
+  margin: 0 8px;
+}
+.add-options label input[type="text"] {
+  width: auto;
+  flex-grow: 1;
+}
+.add-options label input[type="radio"] {
+  height: 22px;
+  width: 22px;
+}

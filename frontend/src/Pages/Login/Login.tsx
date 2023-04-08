@@ -19,9 +19,8 @@ const Login: React.FC = () => {
 
   useEffect(() => {
     if (teacher != null) {
-      navigate("/dashboard");
+      navigate("/teacher");
     }
-    console.log(teacher);
   }, [navigate, teacher]);
 
   if (loading) {

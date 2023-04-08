@@ -5,17 +5,7 @@ import "./Test.css";
 
 const Test: React.FC = () => {
   const [questions, setQuestions] = useState<Array<string>>([]);
-  const fetchData = async () => {
-    try {
-      const { data } = await axios.get("/api/question");
-      setQuestions(data);
-    } catch (error: any) {
-      console.log(error);
-    }
-  };
-  useEffect(() => {
-    fetchData();
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <div className="test">

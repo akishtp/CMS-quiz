@@ -6,7 +6,6 @@ const app = express();
 const mongoose = require("mongoose");
 
 // route imports
-const questionRoutes = require("./Question/routes");
 const teacherRoutes = require("./Teacher/routes");
 const testRoutes = require("./Test/routes");
 
@@ -17,7 +16,6 @@ app.options("*", cors());
 // middleware
 app.use(express.json());
 
-app.use("/api/question", questionRoutes);
 app.use("/api/teacher", teacherRoutes);
 app.use("/api/test", testRoutes);
 

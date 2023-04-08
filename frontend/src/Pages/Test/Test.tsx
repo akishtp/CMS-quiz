@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import Question from "../../Components/Question/Question";
 import "./Test.css";
@@ -16,7 +15,7 @@ const Test: React.FC = () => {
           ))}
         </>
       ) : (
-        <div className="no-records">No Records! Try adding new Records</div>
+        <div className="no-records">Test don't have any questions?</div>
       )}
       <button type="submit" className="submit-test">
         Submit Test

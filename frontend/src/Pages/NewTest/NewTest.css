@@ -3,4 +3,16 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding: 36px 0;
+}
+.end-buttons {
+  width: 84%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.end-buttons button {
+  width: 49%;
+  background-color: #51a341;
+  color: #fff;
 }

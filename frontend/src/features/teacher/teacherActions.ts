@@ -12,7 +12,7 @@ export const login = createAsyncThunk(
     };
     try {
       const { data } = await axios.post(
-        "/api/teacher/login",
+        "https://cms-quiz.up.railway.app/api/teacher/login",
         { teacherId, password },
         config
       );

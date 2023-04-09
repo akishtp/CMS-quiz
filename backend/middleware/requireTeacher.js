@@ -17,7 +17,6 @@ const requireTeacher = async (req, res, next) => {
     req.teacher = await Teacher.findOne({ _id }).select("name");
     next();
   } catch (error) {
-    console.log(error);
     res.status(401).json({ error: "Request is not authorized" });
   }
 };

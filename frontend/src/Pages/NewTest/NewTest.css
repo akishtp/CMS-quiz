@@ -4,6 +4,8 @@
   justify-content: center;
   flex-direction: column;
   padding: 36px 0;
+  background-color: transparent;
+  width: 100%;
 }
 .end-buttons {
   width: 84%;

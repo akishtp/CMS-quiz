@@ -7,7 +7,7 @@ interface addQuestionState {
 
 const AddQuestion: React.FC<addQuestionState> = ({ index }) => {
   return (
-    <form className="add-question">
+    <div className="add-question">
       <label>
         Question {index + 1}:<textarea rows={5}></textarea>
       </label>
@@ -33,7 +33,7 @@ const AddQuestion: React.FC<addQuestionState> = ({ index }) => {
           <input type="text" />
         </label>
       </div>
-    </form>
+    </div>
   );
 };
 

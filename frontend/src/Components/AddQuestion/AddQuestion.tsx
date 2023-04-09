@@ -1,11 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Dispatch } from "react";
 import "./AddQuestion.css";
 
 interface addQuestionState {
   index: number;
+  setQuestions: Dispatch<
+    Array<{ question: string; options: Array<string>; answer: string }>
+  >;
+  questions: Array<{
+    question: string;
+    options: Array<string>;
+    answer: string;
+  }>;
 }
 
-const AddQuestion: React.FC<addQuestionState> = ({ index }) => {
+const AddQuestion: React.FC<addQuestionState> = ({
+  index,
+  setQuestions,
+  questions,
+}) => {
   const [question, setQuestion] = useState<string>(
     "type your question here ..."
   );
@@ -17,6 +29,12 @@ const AddQuestion: React.FC<addQuestionState> = ({ index }) => {
   ]);
   const [answer, setAnswer] = useState<string>(options[0]);
 
+  const handleChange = () => {
+    const newArr = [...questions];
+    newArr[index] = { question, options, answer };
+    setQuestions(newArr);
+  };
+
   return (
     <div className="add-question">
       <label>
@@ -24,7 +42,10 @@ const AddQuestion: React.FC<addQuestionState> = ({ index }) => {
         <textarea
           rows={5}
           value={question}
-          onChange={(e) => setQuestion(e.target.value)}
+          onChange={(e) => {
+            setQuestion(e.target.value);
+            handleChange();
+          }}
         ></textarea>
       </label>
       <div className="add-options">
@@ -36,6 +57,7 @@ const AddQuestion: React.FC<addQuestionState> = ({ index }) => {
             value={options[0]}
             onChange={(e) => {
               setAnswer(e.target.value);
+              handleChange();
             }}
           />
           <div className="option-span">Option 1:</div>
@@ -45,9 +67,10 @@ const AddQuestion: React.FC<addQuestionState> = ({ index }) => {
             value={options[0]}
             onChange={(e) => {
               if (answer === options[0]) setAnswer(e.target.value);
-              const newArr = [...options]; // make a copy of the array to modify
-              newArr[0] = e.target.value; // change the value at index 2 to 10
+              const newArr = [...options];
+              newArr[0] = e.target.value;
               setOptions(newArr);
+              handleChange();
             }}
           />
         </label>
@@ -58,6 +81,7 @@ const AddQuestion: React.FC<addQuestionState> = ({ index }) => {
             value={options[1]}
             onChange={(e) => {
               setAnswer(e.target.value);
+              handleChange();
             }}
           />
           <div className="option-span">Option 2:</div>
@@ -67,9 +91,10 @@ const AddQuestion: React.FC<addQuestionState> = ({ index }) => {
             value={options[1]}
             onChange={(e) => {
               if (answer === options[1]) setAnswer(e.target.value);
-              const newArr = [...options]; // make a copy of the array to modify
-              newArr[1] = e.target.value; // change the value at index 2 to 10
+              const newArr = [...options];
+              newArr[1] = e.target.value;
               setOptions(newArr);
+              handleChange();
             }}
           />
         </label>
@@ -80,6 +105,7 @@ const AddQuestion: React.FC<addQuestionState> = ({ index }) => {
             value={options[2]}
             onChange={(e) => {
               setAnswer(e.target.value);
+              handleChange();
             }}
           />
           <div className="option-span">Option 3:</div>
@@ -89,9 +115,10 @@ const AddQuestion: React.FC<addQuestionState> = ({ index }) => {
             value={options[2]}
             onChange={(e) => {
               if (answer === options[2]) setAnswer(e.target.value);
-              const newArr = [...options]; // make a copy of the array to modify
-              newArr[2] = e.target.value; // change the value at index 2 to 10
+              const newArr = [...options];
+              newArr[2] = e.target.value;
               setOptions(newArr);
+              handleChange();
             }}
           />
         </label>
@@ -102,6 +129,7 @@ const AddQuestion: React.FC<addQuestionState> = ({ index }) => {
             value={options[3]}
             onChange={(e) => {
               setAnswer(e.target.value);
+              handleChange();
             }}
           />
           <div className="option-span">Option 4:</div>
@@ -111,9 +139,10 @@ const AddQuestion: React.FC<addQuestionState> = ({ index }) => {
             value={options[3]}
             onChange={(e) => {
               if (answer === options[3]) setAnswer(e.target.value);
-              const newArr = [...options]; // make a copy of the array to modify
-              newArr[3] = e.target.value; // change the value at index 2 to 10
+              const newArr = [...options];
+              newArr[3] = e.target.value;
               setOptions(newArr);
+              handleChange();
             }}
           />
         </label>

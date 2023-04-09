@@ -2,7 +2,11 @@ import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 interface addTestState {
-  questions: Array<string>;
+  questions: Array<{
+    question: string;
+    options: Array<string>;
+    answer: string;
+  }>;
   subject: string;
   token: string | undefined;
 }

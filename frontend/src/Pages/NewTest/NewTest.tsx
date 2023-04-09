@@ -8,7 +8,9 @@ import { useNavigate } from "react-router-dom";
 const NewTest: React.FC = () => {
   const [noOfQs, setNoOfQs] = useState<number>(1);
   const [subject, setSubject] = useState<string>("");
-  const [questions, setQuestions] = useState<Array<any>>([
+  const [questions, setQuestions] = useState<
+    Array<{ question: string; options: Array<string>; answer: string }>
+  >([
     {
       question: "question1",
       options: ["one", "two", "three", "four"],
@@ -20,9 +22,10 @@ const NewTest: React.FC = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  const handleAddTest = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleAddTest = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    dispatch(addTest({ subject, questions, token: teacher?.token }));
+    await dispatch(addTest({ subject, questions, token: teacher?.token }));
+    navigate("/teacher");
   };
 
   useEffect(() => {
@@ -43,7 +46,14 @@ const NewTest: React.FC = () => {
         />
       </label>
       {Array.from(Array(noOfQs), (e, i) => {
-        return <AddQuestion key={i} index={i} />;
+        return (
+          <AddQuestion
+            key={i}
+            index={i}
+            setQuestions={setQuestions}
+            questions={questions}
+          />
+        );
       })}
       <div className="end-buttons">
         <button

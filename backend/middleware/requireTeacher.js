@@ -14,7 +14,7 @@ const requireTeacher = async (req, res, next) => {
   try {
     const { _id } = jwt.verify(token, process.env.SECRET);
 
-    req.teacher = await Teacher.findOne({ _id }).select("name");
+    req.teacher = await Teacher.findOne({ _id });
     next();
   } catch (error) {
     res.status(401).json({ error: "Request is not authorized" });

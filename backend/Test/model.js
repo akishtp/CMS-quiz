@@ -5,6 +5,7 @@ const Question = require("../Question/model");
 const testSchema = new Schema({
   questions: { type: Array, required: true },
   teacher: { type: String, required: true },
+  teacherId: { type: String, required: true },
   subject: { type: String, required: true },
 });
 

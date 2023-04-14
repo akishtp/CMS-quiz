@@ -54,6 +54,7 @@ const getAllTestByTeacher = async (req, res) => {
       const sendable = {
         subject: test.subject,
         noOfSubmissions: test.answers.length,
+        createdAt: test.createdAt,
       };
       sendingArray.push(sendable);
     });

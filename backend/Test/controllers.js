@@ -45,11 +45,19 @@ const getTest = async (req, res) => {
 };
 
 const getAllTestByTeacher = async (req, res) => {
+  var sendingArray = [];
   try {
     const tests = await Test.find({ teacher_id: req.teacher._id }).sort({
       createdAt: -1,
     });
-    res.status(200).json(tests);
+    tests.map((test) => {
+      const sendable = {
+        subject: test.subject,
+        noOfSubmissions: test.answers.length,
+      };
+      sendingArray.push(sendable);
+    });
+    res.status(200).json(sendingArray);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }

@@ -14,7 +14,7 @@ const Login: React.FC = () => {
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    await dispatch(login({ teacherId, password }));
+    await dispatch(login({ teacher_id: teacherId, password }));
   };
 
   useEffect(() => {

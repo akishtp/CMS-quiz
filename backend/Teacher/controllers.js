@@ -6,11 +6,11 @@ const createToken = (_id) => {
 };
 
 const signupTeacher = async (req, res) => {
-  const { teacherId, name, password } = req.body;
+  const { teacher_id, name, password } = req.body;
   try {
-    const teacher = await Teacher.signup(teacherId, name, password);
+    const teacher = await Teacher.signup(teacher_id, name, password);
     const token = createToken(teacher._id);
-    res.status(200).json({ teacherId, name, token });
+    res.status(200).json({ teacher_id, name, token });
   } catch (error) {
     res.status(400).json({ error: error.message });
     return;
@@ -18,11 +18,11 @@ const signupTeacher = async (req, res) => {
 };
 
 const loginTeacher = async (req, res) => {
-  const { teacherId, password } = req.body;
+  const { teacher_id, password } = req.body;
   try {
-    const teacher = await Teacher.login(teacherId, password);
+    const teacher = await Teacher.login(teacher_id, password);
     const token = createToken(teacher._id);
-    res.status(200).json({ teacherId, name: teacher.name, token });
+    res.status(200).json({ teacher_id, name: teacher.name, token });
   } catch (error) {
     res.status(400).json({ error: error.message });
     return;

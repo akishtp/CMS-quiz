@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { login } from "./teacherActions";
 
 interface TeacherState {
-  teacher: { teacherId: string; name: string; token: string } | null;
+  teacher: { teacher_id: string; name: string; token: string } | null;
   loading: boolean;
   error: null | string | unknown;
 }

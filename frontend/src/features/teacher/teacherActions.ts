@@ -4,7 +4,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 export const login = createAsyncThunk(
   "user/login",
   async (teacher: any, { rejectWithValue }) => {
-    const { teacherId, password } = teacher;
+    const { teacher_id, password } = teacher;
     const config = {
       headers: {
         "Content-Type": "application/json",
@@ -13,7 +13,7 @@ export const login = createAsyncThunk(
     try {
       const { data } = await axios.post(
         "https://cms-quiz.up.railway.app/api/teacher/login",
-        { teacherId, password },
+        { teacher_id, password },
         config
       );
       localStorage.setItem("teacherDetails", JSON.stringify(data));

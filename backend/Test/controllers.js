@@ -44,7 +44,7 @@ const getTest = async (req, res) => {
 };
 
 const getAllTestByTeacher = async (req, res) => {
-  const teacherId = req.teacher._id;
+  const teacher_id = req.teacher._id;
   try {
     const tests = await Test.find({ teacher_id: req.teacher._id });
     res.status(200).json({ tests });

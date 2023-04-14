@@ -18,7 +18,7 @@ const submitTest = async (req, res) => {
     });
 
     const test = await Test.findOne({ _id: test_id });
-    test.answers = [...test.answers, response._id];
+    test.answers.push(response._id);
     await test.save();
     res.status(200).json({ response });
   } catch (error) {

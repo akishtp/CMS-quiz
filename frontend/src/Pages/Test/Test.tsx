@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { getTest } from "../../features/test/testActions";
 import "./Test.css";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Question from "../../Components/Question/Question";
 import { submitTest } from "../../features/answer/answerActions";
 
@@ -20,10 +20,12 @@ const Test: React.FC = () => {
   const { regno } = useAppSelector((state) => state.answer);
 
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     await dispatch(submitTest({ answer: correctAnswer, test_id: id, regno }));
+    navigate(`/submit`);
   };
 
   useEffect(() => {

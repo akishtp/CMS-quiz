@@ -8,6 +8,7 @@ const mongoose = require("mongoose");
 // route imports
 const teacherRoutes = require("./Teacher/routes");
 const testRoutes = require("./Test/routes");
+const answerRoutes = require("./Answer/routes");
 
 const cors = require("cors");
 app.use(cors());
@@ -18,6 +19,7 @@ app.use(express.json());
 
 app.use("/api/teacher", teacherRoutes);
 app.use("/api/test", testRoutes);
+app.use("/api/answer", answerRoutes);
 
 // DeprecationWarning: Mongoose: the `strictQuery` option will be switched back to `false` by default in Mongoose 7.
 mongoose.set("strictQuery", false);

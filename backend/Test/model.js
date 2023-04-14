@@ -8,6 +8,7 @@ const testSchema = new Schema(
     teacher: { type: String, required: true },
     teacher_id: { type: String, required: true },
     subject: { type: String, required: true },
+    answers: { type: Array, required: true, default: [] },
   },
   {
     timestamps: true,

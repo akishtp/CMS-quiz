@@ -1,5 +1,6 @@
 const Question = require("../Question/model");
 const Test = require("./model");
+const Answer = require("../Answer/model");
 
 const addTest = async (req, res) => {
   const teacher_id = req.teacher._id;
@@ -45,8 +46,10 @@ const getTest = async (req, res) => {
 
 const getAllTestByTeacher = async (req, res) => {
   try {
-    const tests = await Test.find({ teacher_id: req.teacher._id });
-    res.status(200).json({ tests });
+    const tests = await Test.find({ teacher_id: req.teacher._id }).sort({
+      createdAt: -1,
+    });
+    res.status(200).json(tests);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }

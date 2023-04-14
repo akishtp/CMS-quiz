@@ -2,7 +2,7 @@ const Question = require("../Question/model");
 const Test = require("./model");
 
 const addTest = async (req, res) => {
-  const teacherId = req.teacher._id;
+  const teacher_id = req.teacher._id;
   const teacher = req.teacher.name;
   const sending = [];
   const { questions, subject } = req.body;
@@ -17,7 +17,7 @@ const addTest = async (req, res) => {
     const response = await Test.create({
       questions: sending,
       teacher,
-      teacherId,
+      teacher_id,
       subject,
     });
     res.status(200).json({ response });

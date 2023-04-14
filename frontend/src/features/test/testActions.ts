@@ -31,8 +31,8 @@ export const addTest = createAsyncThunk(
         config
       );
       return data;
-    } catch (error) {
-      return rejectWithValue(error);
+    } catch (error: any) {
+      return rejectWithValue(error.response.data.error);
     }
   }
 );

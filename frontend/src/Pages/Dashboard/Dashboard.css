@@ -1,3 +1,9 @@
+.dashboard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 .dashboard .new-test span {
   display: none;
 }
@@ -15,4 +21,44 @@
   align-items: center;
   justify-content: center;
   border: 1px solid #000;
+}
+.greeting {
+  width: 94%;
+  font-size: 2.4rem;
+  margin: 18px 0;
+}
+.tests-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.all-test {
+  background-color: #fff;
+  padding: 0 calc(4%);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 4px 0;
+  width: 94%;
+  height: 64px;
+  font-size: 1.2rem;
+}
+.all-test .right-side {
+  background-color: #00000029;
+  height: 48px;
+  width: 48px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+.all-test .middle-side {
+  width: calc(50% - 48px);
+}
+.all-test .left-side {
+  width: calc(50% - 48px);
 }

@@ -46,7 +46,27 @@ export const getTest = createAsyncThunk(
       );
       return data;
     } catch (error: any) {
-      return rejectWithValue(error.error.message);
+      return rejectWithValue(error.response.data.error);
+    }
+  }
+);
+
+export const getallTests = createAsyncThunk(
+  "tests/get",
+  async ({ token }: { token: string | undefined }, { rejectWithValue }) => {
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    try {
+      const { data } = await axios.get(
+        `https://cms-quiz.up.railway.app/api/test/all`,
+        config
+      );
+      return data;
+    } catch (error: any) {
+      return rejectWithValue(error.response.data.error);
     }
   }
 );

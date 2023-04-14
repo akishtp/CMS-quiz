@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { addTest, getTest } from "./testActions";
+import { addTest, getTest, getallTests } from "./testActions";
 
 interface TestState {
   questions: any;
@@ -7,6 +7,11 @@ interface TestState {
   teacher: string;
   loading: boolean;
   error: null | string | unknown;
+  allTestsByTeacher: Array<{
+    subject: string;
+    noOfSubmissions: number;
+    createdAt: string;
+  }>;
 }
 
 const initialState: TestState = {
@@ -15,6 +20,7 @@ const initialState: TestState = {
   teacher: "",
   loading: false,
   error: null,
+  allTestsByTeacher: [],
 };
 
 const testSlice = createSlice({
@@ -33,8 +39,7 @@ const testSlice = createSlice({
       .addCase(addTest.rejected, (state, { payload }) => {
         state.loading = false;
         state.error = payload;
-      });
-    builder
+      })
       .addCase(getTest.pending, (state) => {
         state.loading = true;
         state.error = null;
@@ -46,6 +51,18 @@ const testSlice = createSlice({
         state.teacher = payload.teacher;
       })
       .addCase(getTest.rejected, (state, { payload }) => {
+        state.loading = false;
+        state.error = payload;
+      })
+      .addCase(getallTests.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(getallTests.fulfilled, (state, { payload }) => {
+        state.loading = false;
+        state.allTestsByTeacher = payload;
+      })
+      .addCase(getallTests.rejected, (state, { payload }) => {
         state.loading = false;
         state.error = payload;
       });

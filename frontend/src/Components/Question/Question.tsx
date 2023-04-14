@@ -53,7 +53,6 @@ const Question: React.FC<QuestionState> = ({
           ))}
         </div>
       </div>
-      {question.answer}
     </div>
   );
 };

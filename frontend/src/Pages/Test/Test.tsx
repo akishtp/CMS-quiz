@@ -4,6 +4,7 @@ import { getTest } from "../../features/test/testActions";
 import "./Test.css";
 import { useParams } from "react-router-dom";
 import Question from "../../Components/Question/Question";
+import { submitTest } from "../../features/answer/answerActions";
 
 type TestParams = {
   id: string;
@@ -13,14 +14,16 @@ const Test: React.FC = () => {
   const { id } = useParams<TestParams>();
   const [correctAnswer, setCorrectAnswer] = useState<Array<number>>([]);
 
-  const { questions, subject, teacher, loading } = useAppSelector(
+  const { questions, subject, teacher, loading, error } = useAppSelector(
     (state) => state.test
   );
+  const { regno } = useAppSelector((state) => state.answer);
+
   const dispatch = useAppDispatch();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(correctAnswer);
+    await dispatch(submitTest({ answer: correctAnswer, test_id: id, regno }));
   };
 
   useEffect(() => {
@@ -29,6 +32,10 @@ const Test: React.FC = () => {
 
   if (loading) {
     return <div className="loading">Loading..</div>;
+  }
+
+  if (error) {
+    return <div className="error">error</div>;
   }
   return (
     <form className="test" onSubmit={(e) => handleSubmit(e)}>

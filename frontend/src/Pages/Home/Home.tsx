@@ -1,14 +1,26 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import "./Home.css";
+import { stud_signin } from "../../features/answer/answerSlice";
+import { useAppDispatch } from "../../app/hooks";
+import { useNavigate } from "react-router-dom";
 
 const Home: React.FC = () => {
   const [regno, setRegno] = useState<string>("");
-  const [dob, setDob] = useState<string>();
+  const [dob, setDob] = useState<string>("");
   const [examCode, setExamCode] = useState<string>("");
+
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    dispatch(stud_signin(regno));
+    navigate(`/test/${examCode}`);
+  };
+
   return (
     <div className="home">
-      <form>
+      <form onSubmit={(e) => handleSubmit(e)}>
         <label>
           Register Number:
           <input
@@ -36,9 +48,7 @@ const Home: React.FC = () => {
             onChange={(e) => setExamCode(e.target.value)}
           />
         </label>
-        <Link to={`/test/${examCode}`}>
-          <button type="submit">Start Test</button>
-        </Link>
+        <button type="submit">Start Test</button>
       </form>
     </div>
   );

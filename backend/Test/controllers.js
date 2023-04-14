@@ -35,7 +35,6 @@ const getTest = async (req, res) => {
       const question = await Question.findOne({ _id: question_id });
       questions.push(question);
     }
-    console.log(questions);
     res
       .status(200)
       .json({ questions, teacher: test.teacher, subject: test.subject });

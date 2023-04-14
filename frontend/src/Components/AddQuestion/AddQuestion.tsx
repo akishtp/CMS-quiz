@@ -29,11 +29,12 @@ const AddQuestion: React.FC<addQuestionState> = ({
   ]);
   const [answer, setAnswer] = useState<string>(options[0]);
 
-  const handleChange = () => {
+  useEffect(() => {
     const newArr = [...questions];
     newArr[index] = { question, options, answer };
     setQuestions(newArr);
-  };
+    // eslint-disable-next-line
+  }, [question, options, answer]);
 
   return (
     <div className="add-question">
@@ -44,7 +45,6 @@ const AddQuestion: React.FC<addQuestionState> = ({
           value={question}
           onChange={(e) => {
             setQuestion(e.target.value);
-            handleChange();
           }}
         ></textarea>
       </label>
@@ -57,7 +57,6 @@ const AddQuestion: React.FC<addQuestionState> = ({
             value={options[0]}
             onChange={(e) => {
               setAnswer(e.target.value);
-              handleChange();
             }}
           />
           <div className="option-span">Option 1:</div>
@@ -70,7 +69,6 @@ const AddQuestion: React.FC<addQuestionState> = ({
               const newArr = [...options];
               newArr[0] = e.target.value;
               setOptions(newArr);
-              handleChange();
             }}
           />
         </label>
@@ -81,7 +79,6 @@ const AddQuestion: React.FC<addQuestionState> = ({
             value={options[1]}
             onChange={(e) => {
               setAnswer(e.target.value);
-              handleChange();
             }}
           />
           <div className="option-span">Option 2:</div>
@@ -94,7 +91,6 @@ const AddQuestion: React.FC<addQuestionState> = ({
               const newArr = [...options];
               newArr[1] = e.target.value;
               setOptions(newArr);
-              handleChange();
             }}
           />
         </label>
@@ -105,7 +101,6 @@ const AddQuestion: React.FC<addQuestionState> = ({
             value={options[2]}
             onChange={(e) => {
               setAnswer(e.target.value);
-              handleChange();
             }}
           />
           <div className="option-span">Option 3:</div>
@@ -118,7 +113,6 @@ const AddQuestion: React.FC<addQuestionState> = ({
               const newArr = [...options];
               newArr[2] = e.target.value;
               setOptions(newArr);
-              handleChange();
             }}
           />
         </label>
@@ -129,7 +123,6 @@ const AddQuestion: React.FC<addQuestionState> = ({
             value={options[3]}
             onChange={(e) => {
               setAnswer(e.target.value);
-              handleChange();
             }}
           />
           <div className="option-span">Option 4:</div>
@@ -142,7 +135,6 @@ const AddQuestion: React.FC<addQuestionState> = ({
               const newArr = [...options];
               newArr[3] = e.target.value;
               setOptions(newArr);
-              handleChange();
             }}
           />
         </label>

@@ -8,13 +8,13 @@ const Login: React.FC = () => {
   const [teacherId, setTeacherId] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
-  const { teacher, loading, error } = useAppSelector((state) => state.teacher);
+  const { teacher, loading } = useAppSelector((state) => state.teacher);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    dispatch(login({ teacherId, password }));
+    await dispatch(login({ teacherId, password }));
   };
 
   useEffect(() => {

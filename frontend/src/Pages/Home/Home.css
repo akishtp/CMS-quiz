@@ -7,5 +7,11 @@
 .home button {
   background-color: #51a341;
   color: #fff;
+  width: 100%;
+  border: 2px SOLID #f00;
+  cursor: pointer;
+}
+a {
   width: 84%;
+  cursor: unset;
 }

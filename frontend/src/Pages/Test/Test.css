@@ -2,9 +2,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: (100vh - 64px);
   flex-direction: column;
-  padding: 16px 0;
+  padding: 0 0;
+  background-color: transparent;
+  width: 100%;
 }
 .submit-test {
   width: 94vw;
@@ -13,5 +14,13 @@
   border-radius: 0;
   background-color: #51a341;
   color: #fff;
-  width: 84%;
+  width: 94%;
+}
+
+.test .top-line {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 94%;
 }

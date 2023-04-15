@@ -8,6 +8,7 @@ interface TestState {
   loading: boolean;
   error: null | string | unknown;
   allTestsByTeacher: Array<{
+    test_id: string;
     subject: string;
     noOfSubmissions: number;
     createdAt: string;

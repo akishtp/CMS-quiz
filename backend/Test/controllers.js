@@ -52,6 +52,7 @@ const getAllTestByTeacher = async (req, res) => {
     });
     tests.map((test) => {
       const sendable = {
+        test_id: test._id,
         subject: test.subject,
         noOfSubmissions: test.answers.length,
         createdAt: test.createdAt,

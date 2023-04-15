@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { submitTest } from "./answerActions";
+import { getallAnswers, submitTest } from "./answerActions";
 
 interface AnswerState {
   answer: Array<number>;
@@ -7,6 +7,7 @@ interface AnswerState {
   regno: string;
   loading: boolean;
   error: null | string | unknown;
+  allAnswers: Array<{ regno: string; marks: number }>;
 }
 
 const initialState: AnswerState = {
@@ -15,6 +16,7 @@ const initialState: AnswerState = {
   regno: "",
   loading: false,
   error: null,
+  allAnswers: [],
 };
 
 const answerSlice = createSlice({
@@ -33,9 +35,21 @@ const answerSlice = createSlice({
       })
       .addCase(submitTest.fulfilled, (state, { payload }) => {
         state.loading = false;
-        state.marks = payload.marks;
+        state.marks = payload.response.marks;
       })
       .addCase(submitTest.rejected, (state, { payload }) => {
+        state.loading = false;
+        state.error = payload;
+      })
+      .addCase(getallAnswers.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(getallAnswers.fulfilled, (state, { payload }) => {
+        state.loading = false;
+        state.allAnswers = payload.sendingArray;
+      })
+      .addCase(getallAnswers.rejected, (state, { payload }) => {
         state.loading = false;
         state.error = payload;
       });

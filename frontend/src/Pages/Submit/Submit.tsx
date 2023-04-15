@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useAppSelector } from "../../app/hooks";
 const Submit: React.FC = () => {
   const { regno, marks } = useAppSelector((state) => state.answer);
+  useEffect(() => {
+    // do nothing
+  }, [marks]);
+
   return (
     <div className="marks">
       <div>Register number : {regno}</div>

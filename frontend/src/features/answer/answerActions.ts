@@ -27,3 +27,29 @@ export const submitTest = createAsyncThunk(
     }
   }
 );
+
+export const getallAnswers = createAsyncThunk(
+  "answers/get",
+  async (
+    {
+      token,
+      test_id,
+    }: { token: string | undefined; test_id: string | undefined },
+    { rejectWithValue }
+  ) => {
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    try {
+      const { data } = await axios.get(
+        `https://cms-quiz.up.railway.app/api/answer/${test_id}`,
+        config
+      );
+      return data;
+    } catch (error: any) {
+      return rejectWithValue(error.response.data.error);
+    }
+  }
+);

@@ -21,7 +21,7 @@ const AllTest: React.FC<AllTestsState> = ({ testDetails }) => {
     navigate(`/teacher/${testDetails.test_id}`);
   };
   return (
-    <div className="all-test" onClick={() => ToTestDetails}>
+    <div className="all-test" onClick={() => ToTestDetails()}>
       <div className="left-side">{testDetails.subject}</div>
       <div className="middle-side">{finalDate.toLocaleString()}</div>
       <div className="right-side">{testDetails.noOfSubmissions}</div>

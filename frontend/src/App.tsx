@@ -7,6 +7,7 @@ import Dashboard from "./Pages/Dashboard/Dashboard";
 import NewTest from "./Pages/NewTest/NewTest";
 import Submit from "./Pages/Submit/Submit";
 import TestDetails from "./Pages/TestDetails/TestDetails";
+import Signup from "./Pages/Admin/Signup";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/test/:id" element={<Test />} />
         <Route path="/login" element={<Login />} />
         <Route path="/teacher" element={<Dashboard />} />
+        <Route path="/admin/signup" element={<Signup />} />
         <Route path="/teacher/:id" element={<TestDetails />} />
         <Route path="/new" element={<NewTest />} />
         <Route path="/submit" element={<Submit />} />

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { login } from "./teacherActions";
+import { login, signup } from "./teacherActions";
 
 interface TeacherState {
   teacher: { teacher_id: string; name: string; token: string } | null;
@@ -39,6 +39,18 @@ const teacherSlice = createSlice({
         state.teacher = payload;
       })
       .addCase(login.rejected, (state, { payload }) => {
+        state.loading = false;
+        state.error = payload;
+      })
+      .addCase(signup.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(signup.fulfilled, (state, { payload }) => {
+        state.loading = false;
+        state.teacher = payload;
+      })
+      .addCase(signup.rejected, (state, { payload }) => {
         state.loading = false;
         state.error = payload;
       });

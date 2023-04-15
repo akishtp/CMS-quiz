@@ -24,7 +24,9 @@
   justify-content: space-between;
   width: 94%;
 }
-
+.test label {
+  width: 94%;
+}
 .marks {
   display: flex;
   align-items: center;

@@ -1,0 +1,40 @@
+.test-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 16px 0;
+}
+.student-answer {
+  background-color: #fff;
+  padding: 0 calc(4%);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 4px 0;
+  width: 94%;
+  height: 64px;
+  font-size: 1rem;
+  font-family: "Open Sans", sans-serif;
+}
+.copy-test-code {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 94%;
+  background-color: #fff;
+  height: 48px;
+  border-radius: 4px;
+  margin: 10px 0;
+  padding: 0 calc(4%);
+}
+.copy-button {
+  height: 36px;
+  background-color: transparent;
+  border: 2px solid #51a341;
+  color: #51a341;
+  border-radius: 8px;
+  padding: 0 16px;
+  margin: 0;
+}

@@ -5,6 +5,7 @@ import "./Test.css";
 import { useNavigate, useParams } from "react-router-dom";
 import Question from "../../Components/Question/Question";
 import { submitTest } from "../../features/answer/answerActions";
+import { stud_signin } from "../../features/answer/answerSlice";
 
 type TestParams = {
   id: string;
@@ -13,11 +14,11 @@ type TestParams = {
 const Test: React.FC = () => {
   const { id } = useParams<TestParams>();
   const [correctAnswer, setCorrectAnswer] = useState<Array<number>>([]);
+  const [regno, setRegno] = useState<string>("");
 
   const { questions, subject, teacher, loading, error } = useAppSelector(
     (state) => state.test
   );
-  const { regno } = useAppSelector((state) => state.answer);
 
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
@@ -25,6 +26,7 @@ const Test: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     await dispatch(submitTest({ answer: correctAnswer, test_id: id, regno }));
+    dispatch(stud_signin(regno));
     navigate(`/submit`);
   };
 
@@ -45,6 +47,16 @@ const Test: React.FC = () => {
         <div className="left-side">Subject : {subject}</div>
         <div className="right-side">Teacher: {teacher}</div>
       </div>
+      <label>
+        Register Number:
+        <input
+          className="regno-input"
+          required
+          type="text"
+          value={regno}
+          onChange={(e) => setRegno(e.target.value)}
+        />
+      </label>
       {questions.map(
         (
           question: {

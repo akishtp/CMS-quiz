@@ -27,4 +27,20 @@ const submitTest = async (req, res) => {
   }
 };
 
-module.exports = { submitTest };
+const getAllAnswers = async (req, res) => {
+  var sendingArray = [];
+  try {
+    const answers = await Answer.find({ test_id: req.params.id }).sort({
+      regno: 1,
+    });
+    answers.map((answer) => {
+      const sendable = { regno: answer.regno, marks: answer.marks };
+      sendingArray.push(sendable);
+    });
+    res.status(200).json({ sendingArray });
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+    return;
+  }
+};
+module.exports = { submitTest, getAllAnswers };

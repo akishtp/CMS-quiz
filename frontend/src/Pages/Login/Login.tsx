@@ -8,7 +8,7 @@ const Login: React.FC = () => {
   const [teacherId, setTeacherId] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
-  const { teacher, loading } = useAppSelector((state) => state.teacher);
+  const { teacher, loading, error } = useAppSelector((state) => state.teacher);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
@@ -30,6 +30,7 @@ const Login: React.FC = () => {
   return (
     <div className="login">
       <form onSubmit={(e) => handleLogin(e)}>
+        {error && <div className="error">{error}</div>}
         <label>
           Teacher Id:
           <input

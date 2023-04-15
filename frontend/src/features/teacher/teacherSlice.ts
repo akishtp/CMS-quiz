@@ -4,7 +4,7 @@ import { login } from "./teacherActions";
 interface TeacherState {
   teacher: { teacher_id: string; name: string; token: string } | null;
   loading: boolean;
-  error: null | string | unknown;
+  error: null | string | any;
 }
 
 const teacher = localStorage.getItem("teacherDetails")
@@ -20,7 +20,14 @@ const initialState: TeacherState = {
 const teacherSlice = createSlice({
   name: "teacher",
   initialState,
-  reducers: {},
+  reducers: {
+    logout: (state) => {
+      localStorage.removeItem("teacherDetails");
+      state.loading = false;
+      state.teacher = null;
+      state.error = null;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(login.pending, (state) => {
@@ -37,5 +44,7 @@ const teacherSlice = createSlice({
       });
   },
 });
+
+export const { logout } = teacherSlice.actions;
 
 export default teacherSlice.reducer;

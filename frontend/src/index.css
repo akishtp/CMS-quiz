@@ -40,3 +40,15 @@ button {
   border: 1px solid #000;
   margin: 13px 0 0 0;
 }
+.error {
+  background-color: #f00;
+  color: #fff;
+  width: 84%;
+  text-align: center;
+  height: 36px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+}

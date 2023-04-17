@@ -1,5 +1,3 @@
-Iam surprised you are even here 😳.
-
 # CMS quiz
 
 Welcome to CMS quiz! This web-based application is designed to help you create and take quizzes related to your coursework and general knowledge.
@@ -12,21 +10,24 @@ The Web app has several features that make it a valuable tool for teachers, incl
 - Login and register for an account to access the quiz creator and take quizzes.
 - View your quiz history.
 - View all test scores in one single view.
-- Share test links in a single click
-- answer tests, by following the link given by teachers. no other extra inputs needed.
-- view your results right after completion
+- Share test links in a single click.
 
-# Technologies
+The app also has features benficial for the students, like:
 
-- nodejs and express for server-side code.
+- Answer tests, by following the link given by teachers. no other extra inputs needed.
+- View your results right after completion.
+
+## Technologies
+
+- Nodejs and Express for server-side code.
 - MongoDB for database.
 - Reactjs for client-side code.
 
-# Contribute
+## Contribute
 
-Students of any department in
+Students of any department studiying in CMS college of science and commerce can contibute to this website.
 
-1. Fork this repository
+1. Fork this repository.
 
 2. Clone your forked repository.
 
@@ -40,7 +41,7 @@ git clone https://github.com/your-name/CMS-quiz
 cd CMS-quiz
 ```
 
-4. Install dependencies for the client
+4. Install dependencies for the client.
 
 ```
 cd ../frontend
@@ -66,7 +67,10 @@ JWT_SECRET=your-jwt-secret
 
 ```
 npm start
-cd ../frontend
+```
+
+```
+cd frontend
 npm start
 ```
 
@@ -93,6 +97,8 @@ git push origin my-feature-branch
 
 11. Create a pull request from your forked repository to the original repository.
 
-# License
+## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
+
+Iam surprised you are even here 😳. Thanks for reading 🎁.

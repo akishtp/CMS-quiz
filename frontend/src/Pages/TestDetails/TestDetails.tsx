@@ -32,7 +32,9 @@ const TestDetails: React.FC = () => {
       <div
         className="copy-test-code"
         onClick={() =>
-          navigator.clipboard.writeText(`http://localhost:3000/test/${id}`)
+          navigator.clipboard.writeText(
+            `https://cms-quiz.vercel.app/test/${id}`
+          )
         }
       >
         <div>{id}</div>

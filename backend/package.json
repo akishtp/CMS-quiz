@@ -9,7 +9,9 @@
     "validator": "^13.9.0"
   },
   "name": "cms-quiz-backend",
-  "version": "1",
+  "engines": {
+    "node": "18.13.0"
+  },
   "main": "script.js",
   "scripts": {
     "start": "npx nodemon"

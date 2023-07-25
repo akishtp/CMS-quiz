@@ -13,7 +13,6 @@ const answerRoutes = require("./Answer/routes");
 const cors = require("cors");
 app.use(cors());
 app.options("*", cors());
-
 // middleware
 app.use(express.json());
 

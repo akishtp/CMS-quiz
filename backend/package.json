@@ -10,7 +10,7 @@
   },
   "name": "cms-quiz-backend",
   "engines": {
-    "node": "18.13.0"
+    "node": "18.16.1"
   },
   "main": "script.js",
   "scripts": {

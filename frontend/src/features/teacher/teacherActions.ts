@@ -12,7 +12,7 @@ export const login = createAsyncThunk(
     };
     try {
       const { data } = await axios.post(
-        "https://cms-quiz.up.railway.app/api/teacher/login",
+        "https://cms-quiz.cyclic.app.app/api/teacher/login",
         { teacher_id, password },
         config
       );
@@ -35,7 +35,7 @@ export const signup = createAsyncThunk(
     };
     try {
       const { data } = await axios.post(
-        "https://cms-quiz.up.railway.app/api/teacher/signup",
+        "https://cms-quiz.cyclic.app.app/api/teacher/signup",
         { teacher_id, name, password },
         config
       );

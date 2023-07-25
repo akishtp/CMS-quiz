@@ -1,7 +1,7 @@
 {
   "name": "cms-quiz-frontend",
   "version": "1",
-  "proxy": "https://cms-quiz.up.railway.app/",
+  "proxy": "https://cms-quiz.cyclic.app.app/",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",

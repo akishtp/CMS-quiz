@@ -32,7 +32,6 @@ mongoose
   .then(() => {
     // listen for requests
     app.listen(process.env.PORT, () => {
-      res.status(200).json({ response: "My Precious 🪩" });
       console.log("connected to db & listening on port", process.env.PORT);
     });
   })

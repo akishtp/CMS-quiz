@@ -17,7 +17,7 @@ export const submitTest = createAsyncThunk(
     };
     try {
       const { data } = await axios.post(
-        "http://cms-quiz.cyclic.app/api/answer/",
+        "https://cms-quiz.cyclic.app/api/answer/",
         { answer, regno, test_id },
         config
       );
@@ -44,7 +44,7 @@ export const getallAnswers = createAsyncThunk(
     };
     try {
       const { data } = await axios.get(
-        `http://cms-quiz.cyclic.app/api/answer/${test_id}`,
+        `https://cms-quiz.cyclic.app/api/answer/${test_id}`,
         config
       );
       return data;

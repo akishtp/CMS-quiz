@@ -41,8 +41,14 @@ const AddQuestion: React.FC<addQuestionState> = ({
       <label>
         Question {index + 1}:
         <textarea
+          required
           rows={5}
           value={question}
+          onClick={() => {
+            if (question === "type your question here ...") {
+              setQuestion("");
+            }
+          }}
           onChange={(e) => {
             setQuestion(e.target.value);
           }}
@@ -63,6 +69,13 @@ const AddQuestion: React.FC<addQuestionState> = ({
           <input
             required
             type="text"
+            onClick={() => {
+              if (options[0] === "option 1") {
+                const newArr = [...options];
+                newArr[0] = "";
+                setOptions(newArr);
+              }
+            }}
             value={options[0]}
             onChange={(e) => {
               if (answer === options[0]) setAnswer(e.target.value);
@@ -85,6 +98,13 @@ const AddQuestion: React.FC<addQuestionState> = ({
           <input
             required
             type="text"
+            onClick={() => {
+              if (options[1] === "option 2") {
+                const newArr = [...options];
+                newArr[1] = "";
+                setOptions(newArr);
+              }
+            }}
             value={options[1]}
             onChange={(e) => {
               if (answer === options[1]) setAnswer(e.target.value);
@@ -107,6 +127,13 @@ const AddQuestion: React.FC<addQuestionState> = ({
           <input
             required
             type="text"
+            onClick={() => {
+              if (options[2] === "option 3") {
+                const newArr = [...options];
+                newArr[2] = "";
+                setOptions(newArr);
+              }
+            }}
             value={options[2]}
             onChange={(e) => {
               if (answer === options[2]) setAnswer(e.target.value);
@@ -129,6 +156,13 @@ const AddQuestion: React.FC<addQuestionState> = ({
           <input
             required
             type="text"
+            onClick={() => {
+              if (options[3] === "option 4") {
+                const newArr = [...options];
+                newArr[3] = "";
+                setOptions(newArr);
+              }
+            }}
             value={options[3]}
             onChange={(e) => {
               if (answer === options[3]) setAnswer(e.target.value);

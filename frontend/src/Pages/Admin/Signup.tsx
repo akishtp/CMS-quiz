@@ -10,10 +10,13 @@ const Signup: React.FC = () => {
 
   const { loading, error } = useAppSelector((state) => state.teacher);
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    await dispatch(signup({ teacher_id, password, name }));
+    await dispatch(signup({ teacher_id, password, name })).then(() => {
+      navigate("/teacher");
+    });
   };
   return (
     <div className="login">

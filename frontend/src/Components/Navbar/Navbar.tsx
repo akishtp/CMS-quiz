@@ -20,7 +20,7 @@ const Navbar: React.FC = () => {
       {teacher && (
         <div className="teacher-links">
           <Link to="/teacher" className="dashboard">
-            Dashboard
+            Dashboard 👨‍🏫
           </Link>
           <div className="logout" onClick={() => logoutHandler()}>
             Logout 📤

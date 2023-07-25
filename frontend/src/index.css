@@ -41,6 +41,7 @@ button {
   border-radius: 0;
   border: 1px solid #000;
   margin: 13px 0 0 0;
+  cursor: pointer;
 }
 .error {
   background-color: #f00;

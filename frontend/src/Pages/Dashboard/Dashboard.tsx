@@ -16,7 +16,7 @@ const Dashboard: React.FC = () => {
       await dispatch(getallTests({ token: teacher?.token }));
     };
     if (teacher === null) {
-      navigate("/teacher");
+      navigate("/login");
     } else {
       GettingAllTest();
     }

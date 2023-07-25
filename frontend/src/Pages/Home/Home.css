@@ -2,11 +2,42 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   min-height: calc(100vh - 64px);
+}
+.home .landing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(75vh - 64px);
+  width: 100vw;
+}
+.home .landing a {
+  text-decoration: underline;
+  font-size: 1.4rem;
+}
+.home .for-teach {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(25vh - 64px);
+  flex-direction: column;
+}
+.home .footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  background-color: #51a341;
+  color: #fff;
+  width: 100vw;
+}
+.home .footer a {
+  text-decoration: underline;
+  font-size: 1.2rem;
 }
 .home button {
   background-color: #51a341;
   color: #fff;
-  width: 84%;
-  cursor: pointer;
+  padding: 0 30px;
 }

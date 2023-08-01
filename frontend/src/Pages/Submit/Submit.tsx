@@ -11,7 +11,6 @@ const Submit: React.FC = () => {
       <div>Register number : {regno}</div>
       <div>Your Marks : {marks}</div>
       <div>Submitted at : {new Date().toLocaleString()}</div>
-      <div>Screenshot this page and send it to your teacher</div>
     </div>
   );
 };

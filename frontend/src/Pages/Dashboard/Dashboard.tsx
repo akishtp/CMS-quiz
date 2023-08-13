@@ -28,7 +28,7 @@ const Dashboard: React.FC = () => {
 
   return (
     <div className="dashboard">
-      <div className="greeting">Hey 👋, {teacher?.name} teacher</div>
+      <div className="greeting">Hey 👋, {teacher?.name}</div>
       {allTestsByTeacher.length > 0 ? (
         <div className="tests-wrapper">
           {allTestsByTeacher.map((testDetails, index) => {

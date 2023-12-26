@@ -24,10 +24,7 @@ app.use("/api/answer", answerRoutes);
 mongoose.set("strictQuery", false);
 
 mongoose
-  .connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(process.env.MONGO_URI)
   .then(() => {
     // listen for requests
     app.listen(process.env.PORT, () => {

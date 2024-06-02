@@ -26,7 +26,7 @@ export const addTest = createAsyncThunk(
     };
     try {
       const { data } = await axios.post(
-        "https://cms-quiz.cyclic.app/api/test/",
+        "https://cms-quiz-xlt7.onrender.com/api/test/",
         { questions, subject },
         config
       );
@@ -42,7 +42,7 @@ export const getTest = createAsyncThunk(
   async ({ test_id }: GetTestState, { rejectWithValue }) => {
     try {
       const { data } = await axios.get(
-        `https://cms-quiz.cyclic.app/api/test/${test_id}`
+        `https://cms-quiz-xlt7.onrender.com/api/test/${test_id}`
       );
       return data;
     } catch (error: any) {
@@ -61,7 +61,7 @@ export const getallTests = createAsyncThunk(
     };
     try {
       const { data } = await axios.get(
-        `https://cms-quiz.cyclic.app/api/test/all`,
+        `https://cms-quiz-xlt7.onrender.com/api/test/all`,
         config
       );
       return data;
